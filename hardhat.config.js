@@ -74,6 +74,17 @@ module.exports = {
             sepolia: ETHERSCAN_API_KEY,
             polygon: POLYGONSCAN_API_KEY,
         },
+        // In case the module can't find the rinkeby etherscan automatically
+        customChains: [
+            {
+                network: "sepolia",
+                chainId: 11155111,
+                urls: {
+                    apiURL: "https://api-sepolia.etherscan.io/api",
+                    browserURL: "https://sepolia.etherscan.io",
+                },
+            },
+        ],
     },
     gasReporter: {
         enabled: REPORT_GAS,
